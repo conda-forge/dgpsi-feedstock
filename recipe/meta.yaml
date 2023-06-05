@@ -1,5 +1,5 @@
 {% set name = "dgpsi" %}
-{% set version = "2.1.6" %}
+{% set version = "2.2.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/dgpsi-{{ version }}.tar.gz
-  sha256: 7f76c2894b0c82828134178abef3b71ae338044412a047f250cd311718495650
+  sha256: 4dbc9bace851c6083e6dca87dcadae1d47e3f38ea55cb0d7008173b666219eb0
 
 build:
   number: 1
