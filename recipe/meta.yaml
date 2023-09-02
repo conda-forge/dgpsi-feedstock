@@ -1,5 +1,5 @@
 {% set name = "dgpsi" %}
-{% set version = "2.2.0" %}
+{% set version = "2.3.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/dgpsi-{{ version }}.tar.gz
-  sha256: 4dbc9bace851c6083e6dca87dcadae1d47e3f38ea55cb0d7008173b666219eb0
+  sha256: ac5ea6162366ea96e9a42d703aacd26e30b574e7e6848808ea97bd18a9f08acb
 
 build:
   number: 0
@@ -51,7 +51,7 @@ test:
 
 about:
   home: https://github.com/mingdeyu/DGP
-  summary: A Python package for deep and linked Gaussian process emulations
+  summary: A Python package for deep and linked Gaussian process emulations using stochastic imputation
   license: MIT
   license_file: LICENSE
   doc_url: https://dgpsi.readthedocs.io/
