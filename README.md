@@ -7,7 +7,7 @@ Home: https://github.com/mingdeyu/DGP
 
 Package license: MIT
 
-Summary: A Python package for deep and linked Gaussian process emulations
+Summary: A Python package for deep and linked Gaussian process emulations using stochastic imputation
 
 Development: https://github.com/mingdeyu/DGP
 
