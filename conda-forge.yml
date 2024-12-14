@@ -1,12 +1,4 @@
-build:
-  matrix:
-  - python: 3.7.*
-  - python: 3.8.*
-  - python: 3.9.*
-  - python: 3.10.*
 build_platform:
-  linux_aarch64: linux_64
-  linux_ppc64le: linux_64
   osx_arm64: osx_64
 conda_build:
   pkg_format: '2'
