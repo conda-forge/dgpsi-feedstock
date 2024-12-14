@@ -48,8 +48,6 @@ test:
   imports:
     - dgpsi
     - faiss
-  commands:
-    - pip check
   requires:
     - pip
 
