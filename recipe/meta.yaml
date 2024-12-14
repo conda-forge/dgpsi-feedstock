@@ -1,5 +1,5 @@
 {% set name = "dgpsi" %}
-{% set version = "2.4.0" %}
+{% set version = "2.5.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,11 +7,11 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/dgpsi-{{ version }}.tar.gz
-  sha256: 71685aa43244db67578280787e1d651ab07164baa99743dd5f9c7fbc8671e4ca
+  sha256: ff242d5a273739294e5dc6380b3733b2f5e8bfa58a726cc2a0c4bf385f8909e1
 
 build:
   number: 0
-  skip: true   # [py>=40 or py2k]
+  skip: true   # [py>=311 or py<37]
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
@@ -22,7 +22,7 @@ requirements:
     - {{ compiler('cxx') }}
   host:
     - pip
-    - python
+    - python >=3.7,<=3.10
   run:
     - cython >=0.29.30
     - dill >=0.3.2,<=0.3.5.1
@@ -34,17 +34,19 @@ requirements:
     - multiprocess ==0.70.13
     - psutil >=5.8.0
     - pybind11 >=2.10.0
-    - python
+    - python >=3.7,<=3.10
     - pythran >=0.11.0
     - scikit-build >=0.15.0
     - scikit-learn >=0.22.0
     - scipy >=1.4.1
     - tabulate >=0.8.7
     - tqdm >=4.50.2
+    - faiss-cpu >= 1.7.4
 
 test:
   imports:
     - dgpsi
+    - faiss
   commands:
     - pip check
   requires:
