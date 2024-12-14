@@ -1,13 +1,13 @@
 {% set name = "dgpsi" %}
-{% set version = "2.4.0" %}
+{% set version = "2.5.0" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/dgpsi-{{ version }}.tar.gz
-  sha256: 71685aa43244db67578280787e1d651ab07164baa99743dd5f9c7fbc8671e4ca
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/dgpsi-{{ version }}.tar.gz
+  sha256: ff242d5a273739294e5dc6380b3733b2f5e8bfa58a726cc2a0c4bf385f8909e1
 
 build:
   number: 0
@@ -20,9 +20,11 @@ requirements:
     - cross-python_{{ target_platform }}     # [build_platform != target_platform]
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
+    - {{ stdlib("c") }}
   host:
     - pip
     - python
+    - setuptools
   run:
     - cython >=0.29.30
     - dill >=0.3.2,<=0.3.5.1
@@ -41,12 +43,12 @@ requirements:
     - scipy >=1.4.1
     - tabulate >=0.8.7
     - tqdm >=4.50.2
+    - faiss-cpu >=1.7.4
 
 test:
   imports:
     - dgpsi
-  commands:
-    - pip check
+    - faiss
   requires:
     - pip
 
