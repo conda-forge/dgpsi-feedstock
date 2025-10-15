@@ -1,5 +1,5 @@
 {% set name = "dgpsi" %}
-{% set version = "2.5.0" %}
+{% set version = "2.6.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,11 +7,11 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/dgpsi-{{ version }}.tar.gz
-  sha256: ff242d5a273739294e5dc6380b3733b2f5e8bfa58a726cc2a0c4bf385f8909e1
+  sha256: 30d373974153aff7db8e554043b97d4a24f2947f11abb4f1a10e074ad2a48b48
 
 build:
   number: 0
-  skip: true   # [py>=40 or py2k]
+  skip: true  # [py>=40 or py2k]
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
