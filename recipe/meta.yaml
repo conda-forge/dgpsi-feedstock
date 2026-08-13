@@ -6,11 +6,11 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/dgpsi-{{ version }}.tar.gz
+  url: https://files.pythonhosted.org/packages/source/{{ name[0] }}/{{ name }}/dgpsi-{{ version }}.tar.gz
   sha256: 30d373974153aff7db8e554043b97d4a24f2947f11abb4f1a10e074ad2a48b48
 
 build:
-  number: 0
+  number: 1
   skip: true   # [py<39 or py>=313]
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
 
